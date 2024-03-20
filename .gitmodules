@@ -1,0 +1,9 @@
+[submodule "Auth"]
+	path = Auth
+	url = https://github.com/SOAT1-GRP13/Hackathon-Auth
+[submodule "Relatorio"]
+	path = Relatorio
+	url = https://github.com/SOAT1-GRP13/Hackathon-Relatorio
+[submodule "Ponto"]
+	path = Ponto
+	url = https://github.com/SOAT1-GRP13/Hackathon-Ponto
