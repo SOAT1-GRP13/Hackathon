@@ -13,17 +13,6 @@ Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida ou su
 
 License: [MIT](License.txt)
 
-# Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
-
-O relatório pode ser acessado através do link: 
-- https://soat1-grp13.github.io/
-
-# Relatório OWASP Zap
-
-O relatório pode ser acessado através do link:
-- https://soat1-grp13.github.io/
-
-
 # Clean Architecture
 
 Devido à natureza específica do framework .Net, adotamos uma nomeclatura diferente para nossa estrutura que segue os princípios da Clean Architecture (Arquitetura Limpa).
@@ -40,6 +29,24 @@ No contexto da persistência de dados, a camada de Infraestrutura (Infra) foi de
 
 Esta arquitetura foi adotada para promover a manutenibilidade, escalabilidade e testabilidade do nosso projeto, permitindo uma clara separação de responsabilidades em cada camada. Estamos comprometidos em seguir os princípios da Clean Architecture para alcançar um sistema robusto e bem estruturado.
 
+# Sonar
+Nossos microserviços estão sendo
+
+# Esteira de publicação
+
+# RabbitMQ
+
+# TerraForm
+
+# Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
+
+O relatório pode ser acessado através do link: 
+- https://soat1-grp13.github.io/
+
+# Relatório OWASP Zap
+
+O relatório pode ser acessado através do link:
+- https://soat1-grp13.github.io/
 
 # 🛠️ Abrir e rodar o projeto utilizando o docker
 
