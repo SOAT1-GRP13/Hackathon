@@ -13,6 +13,10 @@ Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida ou su
 
 License: [MIT](License.txt)
 
+#Microserviço
+
+Decidimos utilizar microserviço nesse projeto devido.........
+
 # Clean Architecture
 
 Devido à natureza específica do framework .Net, adotamos uma nomeclatura diferente para nossa estrutura que segue os princípios da Clean Architecture (Arquitetura Limpa).
