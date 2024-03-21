@@ -46,7 +46,7 @@ services:
       timeout: 30s
       retries: 10
 
-#  ##### Auth
+#  ##### Auth #####
 #  api-auth:
 #    build:
 #      context: ./Auth
@@ -82,26 +82,26 @@ services:
       retries: 5
       start_period: 80s
 
-#  ##### Ponto
-#  api-ponto:
-#    build:
-#      context: ./Ponto
-#      args:
-#        - BUILD_CONFIGURATION=Debug
-#      dockerfile: Dockerfile
-#    image: hackathon-soat1-grp13-ponto:latest
-#    restart: on-failure
-#    ports:
-#      - "5271:80"
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - ConnectionString=User ID=fiap;Password=SenhaLocalPonto;Host=postgres-db-ponto;Port=5432;Database=hackathonponto;Pooling=true;
-#      - Rabbit_Hostname=rabbitmq
-#    depends_on:
-#      rabbitmq:
-#        condition: service_healthy
-#      postgres-db-ponto:
-#        condition: service_healthy
+##### Ponto #####
+  api-ponto:
+    build:
+      context: ./Ponto
+      args:
+        - BUILD_CONFIGURATION=Debug
+      dockerfile: Dockerfile
+    image: hackathon-soat1-grp13-ponto:latest
+    restart: on-failure
+    ports:
+      - "5271:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=User ID=fiap;Password=SenhaLocalPonto;Host=postgres-db-ponto;Port=5432;Database=hackathonponto;Pooling=true;
+      - Rabbit_Hostname=rabbitmq
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres-db-ponto:
+        condition: service_healthy
 
   postgres-db-ponto:
     hostname: postgres-compose
@@ -121,26 +121,26 @@ services:
       retries: 5
       start_period: 80s
 
-    ##### Relatorio
-#  api-relatorio:
-#    build:
-#      context: ./Relatorio
-#      args:
-#        - BUILD_CONFIGURATION=Debug
-#      dockerfile: Dockerfile
-#    image: hackathon-soat1-grp13-relatorio:latest
-#    restart: on-failure
-#    ports:
-#      - "5272:80"
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - ConnectionString=User ID=fiap;Password=SenhaLocalRelatorio;Host=postgres-db-relatorio;Port=5432;Database=hackathonrelatorio;Pooling=true;
-#      - Rabbit_Hostname=rabbitmq
-#    depends_on:
-#      rabbitmq:
-#        condition: service_healthy
-#      postgres-db-relatorio:
-#        condition: service_healthy
+##### Relatorio #####
+  api-relatorio:
+    build:
+      context: ./Relatorio
+      args:
+        - BUILD_CONFIGURATION=Debug
+      dockerfile: Dockerfile
+    image: hackathon-soat1-grp13-relatorio:latest
+    restart: on-failure
+    ports:
+      - "5272:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=User ID=fiap;Password=SenhaLocalRelatorio;Host=postgres-db-relatorio;Port=5432;Database=hackathonrelatorio;Pooling=true;
+      - Rabbit_Hostname=rabbitmq
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres-db-relatorio:
+        condition: service_healthy
 
   postgres-db-relatorio:
     hostname: postgres-compose
