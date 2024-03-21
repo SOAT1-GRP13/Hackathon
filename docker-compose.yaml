@@ -46,23 +46,23 @@ services:
       timeout: 30s
       retries: 10
 
-  ##### Auth
-  api-auth:
-    build:
-      context: ./Auth
-      args:
-        - BUILD_CONFIGURATION=Debug
-      dockerfile: Dockerfile
-    image: hackathon-soat1-grp13-auth:latest
-    restart: on-failure
-    ports:
-      - "5270:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionString=User ID=fiap;Password=SenhaLocalAuth;Host=postgres-db-auth;Port=5432;Database=hackathonAuth;Pooling=true;
-    depends_on:
-      postgres-db-auth:
-        condition: service_healthy
+#  ##### Auth
+#  api-auth:
+#    build:
+#      context: ./Auth
+#      args:
+#        - BUILD_CONFIGURATION=Debug
+#      dockerfile: Dockerfile
+#    image: hackathon-soat1-grp13-auth:latest
+#    restart: on-failure
+#    ports:
+#      - "5270:80"
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#      - ConnectionString=User ID=fiap;Password=SenhaLocalAuth;Host=postgres-db-auth;Port=5432;Database=hackathonAuth;Pooling=true;
+#    depends_on:
+#      postgres-db-auth:
+#        condition: service_healthy
 
   postgres-db-auth:
     hostname: postgres-compose
@@ -82,26 +82,26 @@ services:
       retries: 5
       start_period: 80s
 
-  ##### Ponto
-  api-ponto:
-    build:
-      context: ./Ponto
-      args:
-        - BUILD_CONFIGURATION=Debug
-      dockerfile: Dockerfile
-    image: hackathon-soat1-grp13-ponto:latest
-    restart: on-failure
-    ports:
-      - "5271:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionString=User ID=fiap;Password=SenhaLocalPonto;Host=postgres-db-ponto;Port=5432;Database=hackathonponto;Pooling=true;
-      - Rabbit_Hostname=rabbitmq
-    depends_on:
-      rabbitmq:
-        condition: service_healthy
-      postgres-db-ponto:
-        condition: service_healthy
+#  ##### Ponto
+#  api-ponto:
+#    build:
+#      context: ./Ponto
+#      args:
+#        - BUILD_CONFIGURATION=Debug
+#      dockerfile: Dockerfile
+#    image: hackathon-soat1-grp13-ponto:latest
+#    restart: on-failure
+#    ports:
+#      - "5271:80"
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#      - ConnectionString=User ID=fiap;Password=SenhaLocalPonto;Host=postgres-db-ponto;Port=5432;Database=hackathonponto;Pooling=true;
+#      - Rabbit_Hostname=rabbitmq
+#    depends_on:
+#      rabbitmq:
+#        condition: service_healthy
+#      postgres-db-ponto:
+#        condition: service_healthy
 
   postgres-db-ponto:
     hostname: postgres-compose
@@ -122,25 +122,25 @@ services:
       start_period: 80s
 
     ##### Relatorio
-  api-relatorio:
-    build:
-      context: ./Relatorio
-      args:
-        - BUILD_CONFIGURATION=Debug
-      dockerfile: Dockerfile
-    image: hackathon-soat1-grp13-relatorio:latest
-    restart: on-failure
-    ports:
-      - "5272:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionString=User ID=fiap;Password=SenhaLocalRelatorio;Host=postgres-db-relatorio;Port=5432;Database=hackathonrelatorio;Pooling=true;
-      - Rabbit_Hostname=rabbitmq
-    depends_on:
-      rabbitmq:
-        condition: service_healthy
-      postgres-db-relatorio:
-        condition: service_healthy
+#  api-relatorio:
+#    build:
+#      context: ./Relatorio
+#      args:
+#        - BUILD_CONFIGURATION=Debug
+#      dockerfile: Dockerfile
+#    image: hackathon-soat1-grp13-relatorio:latest
+#    restart: on-failure
+#    ports:
+#      - "5272:80"
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#      - ConnectionString=User ID=fiap;Password=SenhaLocalRelatorio;Host=postgres-db-relatorio;Port=5432;Database=hackathonrelatorio;Pooling=true;
+#      - Rabbit_Hostname=rabbitmq
+#    depends_on:
+#      rabbitmq:
+#        condition: service_healthy
+#      postgres-db-relatorio:
+#        condition: service_healthy
 
   postgres-db-relatorio:
     hostname: postgres-compose
@@ -161,6 +161,6 @@ services:
       start_period: 80s
 
 volumes:
-  hackathon-soat1-grp13-db-data-auth:
-  hackathon-soat1-grp13-db-data-ponto:
+#  hackathon-soat1-grp13-db-data-auth:
+#  hackathon-soat1-grp13-db-data-ponto:
   hackathon-soat1-grp13-db-data-relatorio:
