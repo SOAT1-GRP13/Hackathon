@@ -47,22 +47,21 @@ services:
       retries: 10
 
 #  ##### Auth #####
-#  api-auth:
-#    build:
-#      context: ./Auth
-#      args:
-#        - BUILD_CONFIGURATION=Debug
-#      dockerfile: Dockerfile
-#    image: hackathon-soat1-grp13-auth:latest
-#    restart: on-failure
-#    ports:
-#      - "5270:80"
-#    environment:
-#      - ASPNETCORE_ENVIRONMENT=Development
-#      - ConnectionString=User ID=fiap;Password=SenhaLocalAuth;Host=postgres-db-auth;Port=5432;Database=hackathonAuth;Pooling=true;
-#    depends_on:
-#      postgres-db-auth:
-#        condition: service_healthy
+  api-auth:
+   build:
+     context: ./Auth
+     args:
+       - BUILD_CONFIGURATION=Debug
+     dockerfile: Dockerfile
+   image: hackathon-soat1-grp13-auth:latest
+   ports:
+     - "5270:8080"
+   environment:
+     - ASPNETCORE_ENVIRONMENT=Development
+     - ConnectionString=User ID=fiap;Password=SenhaLocalAuth;Host=postgres-db-auth;Port=5432;Database=hackathonAuth;Pooling=true;
+   depends_on:
+     postgres-db-auth:
+       condition: service_healthy
 
   postgres-db-auth:
     hostname: postgres-compose
