@@ -161,6 +161,6 @@ services:
       start_period: 80s
 
 volumes:
-#  hackathon-soat1-grp13-db-data-auth:
-#  hackathon-soat1-grp13-db-data-ponto:
+  hackathon-soat1-grp13-db-data-auth:
+  hackathon-soat1-grp13-db-data-ponto:
   hackathon-soat1-grp13-db-data-relatorio:
