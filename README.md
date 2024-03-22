@@ -60,10 +60,10 @@ Nos projetos foi instalado o REDOC e pode ser acessado através do caminho http:
 
 Abaixo um breve detalhamento de cada microserviço
 
-- Auth-service: Microserviço de controle de acesso dos colaboradores. No token será armazenado o id do colaborador e seu email.
-- Ponto-service: Microserviço de controle de batidas de ponto do período em aberto. Podendo ser escalado/replicado de acordo com a carga de acesso em determinados horários.
+- **Auth-service**: Microserviço de controle de acesso dos colaboradores. No token será armazenado o id do colaborador e seu email.
+- **Ponto-service**: Microserviço de controle de batidas de ponto do período em aberto. Podendo ser escalado/replicado de acordo com a carga de acesso em determinados horários.
 Sua comunicação do o Relatorio-service será feito através de mensageria.
-- Relatorio-service: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
+- **Relatorio-service**: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
 
 ![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_bater_ponto.png>)
 
@@ -75,11 +75,11 @@ Sua comunicação do o Relatorio-service será feito através de mensageria.
 
 Abaixo um breve detalhamento de cada microserviço
 
-- Auth-service: Microserviço de controle de acesso dos colaboradores. No token será armazenado o id do colaborador, seu email e role de acesso, se é apenas colaborador ou supervisor.
-- Ponto-service: Microserviço de controle de batidas de ponto do período em aberto. Podendo ser escalado/replicado de acordo com a carga de acesso em determinados horários. Nessa etapa ele irá receber a funcionalidade de permitir o colaborar alterar uma batida. Será implementado uma tela administrativa para o supervisor poder aprovar ou reprovar as solicitações de alteração de batida e gerar relatórios.
+- **Auth-service**: Microserviço de controle de acesso dos colaboradores. No token será armazenado o id do colaborador, seu email e role de acesso, se é apenas colaborador ou supervisor.
+- **Ponto-service**: Microserviço de controle de batidas de ponto do período em aberto. Podendo ser escalado/replicado de acordo com a carga de acesso em determinados horários. Nessa etapa ele irá receber a funcionalidade de permitir o colaborar alterar uma batida. Será implementado uma tela administrativa para o supervisor poder aprovar ou reprovar as solicitações de alteração de batida e gerar relatórios.
 Sua comunicação do o Relatorio-service e Notificacao-service será feito através de mensageria.
-- Relatorio-service: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
-- Notificacao-service: Microserviço responsável por notificar os usuários sobre batidas de ponto pendentes, solicitação de aprovação de alteração de batidas de ponto e confirmação se a solicitação de alteração de batidade de ponto foi aprovada ou não.
+- **Relatorio-service**: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
+- **Notificacao-service**: Microserviço responsável por notificar os usuários sobre batidas de ponto pendentes, solicitação de aprovação de alteração de batidas de ponto e confirmação se a solicitação de alteração de batidade de ponto foi aprovada ou não.
 
 ![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_editar_ponto.png>)
 
@@ -93,7 +93,7 @@ Sua comunicação do o Relatorio-service e Notificacao-service será feito atrav
 
 # Clean Architecture
 
-Devido à natureza específica do framework .Net, adotamos uma nomeclatura diferente para nossa estrutura que segue os princípios da Clean Architecture (Arquitetura Limpa).
+Nesse projeto decidimos utilizar a arquitetura Clean Architecture e devido à natureza específica do framework .Net, adotamos uma nomeclatura diferente para nossa estrutura que segue os princípios da Clean Architecture (Arquitetura Limpa).
 
 Na nossa arquitetura, a camada de Controller corresponde à Camada de API da Clean Architecture. Esta camada é responsável por lidar com as requisições externas e coordenar o fluxo de dados.
 
@@ -107,7 +107,7 @@ No contexto da persistência de dados, a camada de Infraestrutura (Infra) foi de
 
 Esta arquitetura foi adotada para promover a manutenibilidade, escalabilidade e testabilidade do nosso projeto, permitindo uma clara separação de responsabilidades em cada camada. Estamos comprometidos em seguir os princípios da Clean Architecture para alcançar um sistema robusto e bem estruturado.
 
-#Microserviço
+# Microserviços
 
 Decidimos utilizar microserviço nesse projeto devido.........
 
@@ -116,7 +116,23 @@ Decidimos utilizar microserviço nesse projeto devido.........
 ![fluxo_microservicos](</Documentos/Imagens/fluxo_microservicos-Hackathon.png>)
 
 # Sonar
-Nossos microserviços estão sendo
+Para assegurar um bom padrão de qualidade do código e manter a integridade de nossos microserviços, optamos por integrar o SonarQube em nosso processo de desenvolvimento. O SonarQube é uma plataforma de inspeção contínua da qualidade do código, que nos permite monitorar e melhorar a qualidade do código ao longo do tempo, identificando:
+- **Bugs**: O SonarQube ajuda a detectar e corrigir bugs no código antes que eles cheguem à produção, reduzindo potencialmente o tempo de inatividade e melhorando a experiência do usuário.
+- **Vulnerabilidades de Segurança**: Ao analisar o código em busca de vulnerabilidades conhecidas, o SonarQube nos permite fortalecer a segurança de nossos microserviços, protegendo dados sensíveis e sistemas contra ataques.
+- **Code Smells**: A identificação de problemas de design no código, nos ajuda a manter o código limpo e mais fácil de manter, facilitando a integração de novas funcionalidades.
+
+**Integração com CI/CD**
+
+A integração do SonarQube com nossas pipelines de CI/CD (Integração Contínua e Entrega Contínua/Deploy Contínuo) automatiza a análise de código em cada push ou pull request na main, garantindo que apenas o código que atende aos nossos padrões de qualidade seja promovido para os ambientes subsequentes. Essa integração nos permite:
+
+**Feedback Instantâneo**: Desenvolvedores recebem feedback imediato sobre a qualidade do código, permitindo correções rápidas e iterativas.
+**Visibilidade da Qualidade do Código**: Dashboards e relatórios gerados pelo SonarQube oferecem uma visão clara da saúde do código e das áreas que necessitam de atenção, promovendo uma cultura de qualidade entre a equipe.
+
+**Link dos nosso microserviços no Sonar**
+
+- **Auth**: https://sonarcloud.io/summary/overall?id=SOAT1-GRP13_Hackathon-Auth
+- **Ponto**: https://sonarcloud.io/summary/overall?id=SOAT1-GRP13_Hackathon-Ponto
+- **Relatório**: https://sonarcloud.io/summary/overall?id=SOAT1-GRP13_Hackathon-Relatorio
 
 # Esteira de publicação
 
