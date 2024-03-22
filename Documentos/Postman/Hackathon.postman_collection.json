@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "c54c83a2-cd0d-4ac0-b0f9-cd625674b4ab",
+		"name": "Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2241409",
+		"_collection_link": "https://soat1-grp13.postman.co/workspace/soat-1-grp13~93e16dec-f4bd-44a2-bbcb-f38830f42282/collection/2241409-c54c83a2-cd0d-4ac0-b0f9-cd625674b4ab?action=share&source=collection_link&creator=2241409"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Ponto",
+					"item": [
+						{
+							"name": "Solicita Espelho de Ponto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenAcesso}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:{{PontoPort}}/Pontos/solicita-espelho-ponto?mes=2&ano=2024",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PontoPort}}",
+									"path": [
+										"Pontos",
+										"solicita-espelho-ponto"
+									],
+									"query": [
+										{
+											"key": "mes",
+											"value": "2"
+										},
+										{
+											"key": "ano",
+											"value": "2024"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Busca batidas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenAcesso}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:{{PontoPort}}/Pontos/obter-pontos?mes=3&dia=21&ano=2024",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PontoPort}}",
+									"path": [
+										"Pontos",
+										"obter-pontos"
+									],
+									"query": [
+										{
+											"key": "mes",
+											"value": "3"
+										},
+										{
+											"key": "dia",
+											"value": "21"
+										},
+										{
+											"key": "ano",
+											"value": "2024"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bater ponto Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenAcesso}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"tipoPonto\": 0,\r\n  \"observacao\": \"Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PontoPort}}/Pontos/adicionar-ponto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PontoPort}}",
+									"path": [
+										"Pontos",
+										"adicionar-ponto"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "AutenticaUsuario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();",
+											"pm.environment.set(\"tokenAcesso\", response.tokenAcesso);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"matricula\": \"2300105\",\n  \"senha\": \"Teste@123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:{{AuthPort}}/Usuario/AutenticaUsuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{AuthPort}}",
+									"path": [
+										"Usuario",
+										"AutenticaUsuario"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AWS",
+			"item": [
+				{
+					"name": "Ponto",
+					"item": [
+						{
+							"name": "Solicita Espelho de Ponto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenAcesso}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiGateway}}/ponto/Pontos/solicita-espelho-ponto?mes=2&ano=2024",
+									"host": [
+										"{{ApiGateway}}"
+									],
+									"path": [
+										"ponto",
+										"Pontos",
+										"solicita-espelho-ponto"
+									],
+									"query": [
+										{
+											"key": "mes",
+											"value": "2"
+										},
+										{
+											"key": "ano",
+											"value": "2024"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bater ponto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{tokenAcesso}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"tipoPonto\": 0,\r\n  \"observacao\": \"Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ApiGateway}}/ponto/Pontos/adicionar-ponto",
+									"host": [
+										"{{ApiGateway}}"
+									],
+									"path": [
+										"ponto",
+										"Pontos",
+										"adicionar-ponto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Busca batidas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenAcesso}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{ApiGateway}}/ponto/Pontos/obter-pontos?mes=3&dia=21&ano=2024",
+									"host": [
+										"{{ApiGateway}}"
+									],
+									"path": [
+										"ponto",
+										"Pontos",
+										"obter-pontos"
+									],
+									"query": [
+										{
+											"key": "mes",
+											"value": "3"
+										},
+										{
+											"key": "dia",
+											"value": "21"
+										},
+										{
+											"key": "ano",
+											"value": "2024"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AutenticaUsuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"pm.environment.set(\"tokenAcesso\", response.tokenAcesso);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"matricula\": \"2300105\",\n  \"senha\": \"Teste@123\"\n}"
+						},
+						"url": {
+							"raw": "{{ApiGateway}}/Auth/Usuario/AutenticaUsuario",
+							"host": [
+								"{{ApiGateway}}"
+							],
+							"path": [
+								"Auth",
+								"Usuario",
+								"AutenticaUsuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
