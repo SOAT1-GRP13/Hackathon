@@ -13,6 +13,13 @@ Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida ou su
 
 License: [MIT](License.txt)
 
+# Vídeo
+
+No vídeo abaixo, explicamos com mais detalhes o projeto:
+
+TODO -> Link do vídeo
+![Video_explicativo](<http://>)
+
 # 🛠️ Abrir e rodar o projeto utilizando o docker
 
 Para o correto funcionamento precisa do docker instalado.
