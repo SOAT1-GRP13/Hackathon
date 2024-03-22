@@ -65,11 +65,11 @@ Abaixo um breve detalhamento de cada microserviço
 Sua comunicação do o Relatorio-service será feito através de mensageria.
 - **Relatorio-service**: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
 
-![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_bater_ponto.png>)
+![fluxo_bater_ponto](</Documentos/Imagens/MVP1/fluxo_bater_ponto.png>)
 
-![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_visualizar_batidas.png>)
+![fluxo_visualizar_batidas](</Documentos/Imagens/MVP1/fluxo_visualizar_batidas.png>)
 
-![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_solicitar_espelho.png>)
+![fluxo_solicitar_espelho](</Documentos/Imagens/MVP1/fluxo_solicitar_espelho.png>)
 
 **Desenho da solução evolutiva (fase 2)**
 
@@ -81,15 +81,15 @@ Sua comunicação do o Relatorio-service e Notificacao-service será feito atrav
 - **Relatorio-service**: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
 - **Notificacao-service**: Microserviço responsável por notificar os usuários sobre batidas de ponto pendentes, solicitação de aprovação de alteração de batidas de ponto e confirmação se a solicitação de alteração de batidade de ponto foi aprovada ou não.
 
-![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_editar_ponto.png>)
+![fluxo_editar_ponto](</Documentos/Imagens/MVP2/fluxo_editar_ponto.png>)
 
-![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_aprovar_edicao_ponto.png>)
+![fluxo_aprovar_edicao_ponto](</Documentos/Imagens/MVP2/fluxo_aprovar_edicao_ponto.png>)
 
-![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_notificar_usuario.png>)
+![fluxo_notificar_usuario](</Documentos/Imagens/MVP2/fluxo_notificar_usuario.png>)
 
-![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_gerar_relatorio.png>)
+![fluxo_gerar_relatorio](</Documentos/Imagens/MVP2/fluxo_gerar_relatorio.png>)
 
-![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_inserir_usuario.png>)
+![fluxo_inserir_usuario](</Documentos/Imagens/MVP2/fluxo_inserir_usuario.png>)
 
 # Clean Architecture
 
@@ -177,7 +177,21 @@ A escolha do RabbitMQ como nosso broker de mensagens para a comunicação assín
 
 Utilizando o RabbitMQ, promovemos um menor acoplamento entre os serviços, aumentando a resiliência e a eficiência do sistema como um todo.
 
-# TerraForm
+# Gestão da Infraestrutura na AWS com Terraform
+
+A escolha do Terraform para gerir nossa infraestrutura na AWS reflete nosso compromisso com práticas modernas de desenvolvimento e operações. O Terraform, sendo uma ferramenta de infraestrutura como código (IaC) open-source, nos permite:
+
+- **Automatizar a Criação**: Automatizamos a criação, modificação e remoção de recursos na AWS, reduzindo o potencial para erros humanos e aumentando a eficiência.
+- **Gerenciar como Código**: Mantemos a configuração da nossa infraestrutura versionada e documentada, facilitando as revisões e alterações.
+- **Implantar com Confiança**: Utilizamos os planos de execução do Terraform para revisar as alterações antes de aplicá-las, garantindo que apenas as mudanças desejadas sejam feitas.
+- **Adaptabilidade**: O Terraform nos permite gerenciar uma ampla variedade de recursos na AWS, proporcionando a flexibilidade para adaptar e escalar nossa infraestrutura conforme as necessidades do projeto evoluem.
+
+Através do Terraform, asseguramos uma abordagem consistente e reproduzível para a gestão da infraestrutura, essencial para suportar a operação contínua e o crescimento do nosso sistema de ponto eletrônico em nuvem.
+
+**Desenho da nossa infraestrutura na AWS**
+
+TODO -> Colocar o desenho da nossa infraestrutura
+![infra_AWS](</Documentos/Imagens//.png>)
 
 # Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
 
