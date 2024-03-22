@@ -13,45 +13,6 @@ Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida ou su
 
 License: [MIT](License.txt)
 
-#Microserviço
-
-Decidimos utilizar microserviço nesse projeto devido.........
-
-# Clean Architecture
-
-Devido à natureza específica do framework .Net, adotamos uma nomeclatura diferente para nossa estrutura que segue os princípios da Clean Architecture (Arquitetura Limpa).
-
-Na nossa arquitetura, a camada de Controller corresponde à Camada de API da Clean Architecture. Esta camada é responsável por lidar com as requisições externas e coordenar o fluxo de dados.
-
-A camada de queries foi concebida como a camada de Gateways na Clean Architecture. Aqui, centralizamos a lógica relacionada à recuperação de dados, permitindo uma separação clara entre a fonte de dados e a lógica de negócios.
-
-Para a implementação das operações de comando, optamos por utilizar a camada de command handlers, que equivale à camada de controller na Clean Architecture. Nesta camada, tratamos as ações e comandos vindos da camada de API, garantindo a execução das operações necessárias.
-
-O projeto de Domain abriga as nossas entidades de negócio e objetos de valor (Value Objects). Esta camada é o coração do nosso sistema, encapsulando as regras de negócio essenciais.
-
-No contexto da persistência de dados, a camada de Infraestrutura (Infra) foi designada como a camada de DB (Banco de Dados) na Clean Architecture. Aqui, lidamos com aspectos de armazenamento e recuperação de dados, mantendo a separação entre as preocupações de banco de dados e as regras de negócio.
-
-Esta arquitetura foi adotada para promover a manutenibilidade, escalabilidade e testabilidade do nosso projeto, permitindo uma clara separação de responsabilidades em cada camada. Estamos comprometidos em seguir os princípios da Clean Architecture para alcançar um sistema robusto e bem estruturado.
-
-# Sonar
-Nossos microserviços estão sendo
-
-# Esteira de publicação
-
-# RabbitMQ
-
-# TerraForm
-
-# Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
-
-O relatório pode ser acessado através do link: 
-- https://soat1-grp13.github.io/
-
-# Relatório OWASP Zap
-
-O relatório pode ser acessado através do link:
-- https://soat1-grp13.github.io/
-
 # 🛠️ Abrir e rodar o projeto utilizando o docker
 
 Para o correto funcionamento precisa do docker instalado.
@@ -93,9 +54,70 @@ Você pode baixar nossa Collection nos arquivos presentes na pasta Documentos/Po
 
 Nos projetos foi instalado o REDOC e pode ser acessado através do caminho http://localhost:[PORTA]/api-docs/index.html
 
-# Fluxo de comunicação entre os microserviços
+# Fluxogramas
+
+**Desenho da solução MVP**
+
+![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_bater_ponto.png>)
+
+![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_visualizar_batidas.png>)
+
+![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_solicitar_espelho.png>)
+
+**Desenho da solução evolutiva (fase 2)**
+
+![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_editar_ponto.png>)
+
+![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_aprovar_edicao_ponto.png>)
+
+![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_notificar_usuario.png>)
+
+![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_gerar_relatorio.png>)
+
+![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_inserir_usuario.png>)
+
+# Clean Architecture
+
+Devido à natureza específica do framework .Net, adotamos uma nomeclatura diferente para nossa estrutura que segue os princípios da Clean Architecture (Arquitetura Limpa).
+
+Na nossa arquitetura, a camada de Controller corresponde à Camada de API da Clean Architecture. Esta camada é responsável por lidar com as requisições externas e coordenar o fluxo de dados.
+
+A camada de queries foi concebida como a camada de Gateways na Clean Architecture. Aqui, centralizamos a lógica relacionada à recuperação de dados, permitindo uma separação clara entre a fonte de dados e a lógica de negócios.
+
+Para a implementação das operações de comando, optamos por utilizar a camada de command handlers, que equivale à camada de controller na Clean Architecture. Nesta camada, tratamos as ações e comandos vindos da camada de API, garantindo a execução das operações necessárias.
+
+O projeto de Domain abriga as nossas entidades de negócio e objetos de valor (Value Objects). Esta camada é o coração do nosso sistema, encapsulando as regras de negócio essenciais.
+
+No contexto da persistência de dados, a camada de Infraestrutura (Infra) foi designada como a camada de DB (Banco de Dados) na Clean Architecture. Aqui, lidamos com aspectos de armazenamento e recuperação de dados, mantendo a separação entre as preocupações de banco de dados e as regras de negócio.
+
+Esta arquitetura foi adotada para promover a manutenibilidade, escalabilidade e testabilidade do nosso projeto, permitindo uma clara separação de responsabilidades em cada camada. Estamos comprometidos em seguir os princípios da Clean Architecture para alcançar um sistema robusto e bem estruturado.
+
+#Microserviço
+
+Decidimos utilizar microserviço nesse projeto devido.........
+
+**Fluxo de comunicação entre os microserviços**
 
 ![fluxo_microservicos](</Documentos/Imagens/fluxo_microservicos-Hackathon.png>)
+
+# Sonar
+Nossos microserviços estão sendo
+
+# Esteira de publicação
+
+# RabbitMQ
+
+# TerraForm
+
+# Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
+
+O relatório pode ser acessado através do link: 
+- https://soat1-grp13.github.io/
+
+# Relatório OWASP Zap
+
+O relatório pode ser acessado através do link:
+- https://soat1-grp13.github.io/
 
 # ✔️ Tecnologias utilizadas
 
