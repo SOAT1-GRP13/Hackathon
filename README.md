@@ -5,7 +5,7 @@
 # Resumo do projeto
 Este projeto foi desenvolvido em C# com .NET 6, seguindo os princípios da arquitetura hexagonal. É um trabalho que está sendo realizado durante nossa pós-graduação com intuito de conclusão do curso, com o objetivo de aplicar as melhores práticas de arquitetura de software.
 
-O propósito principal do projeto é criar uma API REST para atender as necessidades de uma .....
+O principal objetivo deste projeto é desenvolver uma API REST para atender as demandas de uma grande corporação que visa migrar seu sistema de registro de ponto para a nuvem. Na primeira versão do produto (MVP 1), focamos em funcionalidades essenciais que permitem aos colaboradores registrar pontos, visualizar registros diários e solicitar espelhos de ponto. Além dos requisitos funcionais, damos grande ênfase aos aspectos não funcionais, como escalabilidade, segurança e alta disponibilidade, adotando tecnologias e práticas atuais do mercado para assegurar uma solução confiável e eficiente.
 
 Sinta-se à vontade para entrar em contato conosco se tiver alguma dúvida ou sugestão. Agradecemos pelo interesse em nosso projeto!
 
