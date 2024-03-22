@@ -167,7 +167,15 @@ Esta estratégia de CI/CD nos permite manter um ritmo constante de inovação e 
 - **Ponto**: https://hub.docker.com/repository/docker/christiandmelo/hackathon-soat1-grp13-ponto/general
 - **Relatório**: https://hub.docker.com/repository/docker/christiandmelo/hackathon-soat1-grp13-relatorio/general
 
-# RabbitMQ
+# Comunicação Assíncrona com RabbitMQ
+
+A escolha do RabbitMQ como nosso broker de mensagens para a comunicação assíncrona entre os microserviços foi motivada por sua robustez, flexibilidade e ampla adoção no mercado. Como uma solução open source, o RabbitMQ oferece:
+
+- **Confiabilidade**: Garante a entrega de mensagens mesmo em caso de falhas de rede ou serviços, através de funcionalidades como confirmações de mensagens e filas duráveis.
+- **Escalabilidade**: Facilmente escalável, suporta o crescimento da carga de trabalho sem comprometer o desempenho.
+- **Compatibilidade**: Sua ampla adoção no mercado assegura uma vasta gama de bibliotecas e integrações, facilitando a implementação em diversos ambientes de desenvolvimento.
+
+Utilizando o RabbitMQ, promovemos um menor acoplamento entre os serviços, aumentando a resiliência e a eficiência do sistema como um todo.
 
 # TerraForm
 
