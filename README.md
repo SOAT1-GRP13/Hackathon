@@ -58,6 +58,13 @@ Nos projetos foi instalado o REDOC e pode ser acessado através do caminho http:
 
 **Desenho da solução MVP**
 
+Abaixo um breve detalhamento de cada microserviço
+
+- Auth-service: Microserviço de controle de acesso dos colaboradores. No token será armazenado o id do colaborador e seu email.
+- Ponto-service: Microserviço de controle de batidas de ponto do período em aberto. Podendo ser escalado/replicado de acordo com a carga de acesso em determinados horários.
+Sua comunicação do o Relatorio-service será feito através de mensageria.
+- Relatorio-service: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
+
 ![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_bater_ponto.png>)
 
 ![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_visualizar_batidas.png>)
@@ -65,6 +72,14 @@ Nos projetos foi instalado o REDOC e pode ser acessado através do caminho http:
 ![fluxo_microservicos](</Documentos/Imagens/MVP1/fluxo_solicitar_espelho.png>)
 
 **Desenho da solução evolutiva (fase 2)**
+
+Abaixo um breve detalhamento de cada microserviço
+
+- Auth-service: Microserviço de controle de acesso dos colaboradores. No token será armazenado o id do colaborador, seu email e role de acesso, se é apenas colaborador ou supervisor.
+- Ponto-service: Microserviço de controle de batidas de ponto do período em aberto. Podendo ser escalado/replicado de acordo com a carga de acesso em determinados horários. Nessa etapa ele irá receber a funcionalidade de permitir o colaborar alterar uma batida. Será implementado uma tela administrativa para o supervisor poder aprovar ou reprovar as solicitações de alteração de batida e gerar relatórios.
+Sua comunicação do o Relatorio-service e Notificacao-service será feito através de mensageria.
+- Relatorio-service: Microserviço de geração de relatórios. Nele irá conter os dados dos perídos fechados, não impactando a performace das batidas do período aberto.
+- Notificacao-service: Microserviço responsável por notificar os usuários sobre batidas de ponto pendentes, solicitação de aprovação de alteração de batidas de ponto e confirmação se a solicitação de alteração de batidade de ponto foi aprovada ou não.
 
 ![fluxo_microservicos](</Documentos/Imagens/MVP2/fluxo_editar_ponto.png>)
 
