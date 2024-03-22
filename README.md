@@ -109,7 +109,20 @@ Esta arquitetura foi adotada para promover a manutenibilidade, escalabilidade e 
 
 # Microserviços
 
-Decidimos utilizar microserviço nesse projeto devido.........
+Adotamos a arquitetura de microserviços devido à sua capacidade de oferecer escalabilidade e alta disponibilidade, fundamentais para o sucesso do nosso sistema de ponto eletrônico em nuvem. Principais benefícios incluem:
+
+- **Escalabilidade**: Permite ajustar recursos por serviço conforme necessário, otimizando a eficiência durante picos de demanda.
+- **Resiliência**: Isola falhas, garantindo que um problema em um serviço não comprometa todo o sistema.
+- **Desenvolvimento Ágil**: Facilita atualizações e a adição de novas funcionalidades, com equipes trabalhando de forma independente em serviços distintos.
+- **Tecnologia Diversificada**: Cada serviço pode utilizar a stack tecnológica mais adequada, promovendo inovação.
+  
+Esta estrutura nos prepara para atender às necessidades atuais e futuras, mantendo o sistema robusto e adaptável.
+
+**Repositório de nossos Microserviços**
+
+- **Auth**: https://github.com/SOAT1-GRP13/Hackathon-Auth
+- **Ponto**: https://github.com/SOAT1-GRP13/Hackathon-Ponto
+- **Relatório**: https://github.com/SOAT1-GRP13/Hackathon-Relatorio
 
 **Fluxo de comunicação entre os microserviços**
 
