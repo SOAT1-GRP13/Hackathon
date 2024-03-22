@@ -203,12 +203,12 @@ TODO -> Colocar o desenho da nossa infraestrutura
 # Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
 
 O relatório pode ser acessado através do link: 
-- https://soat1-grp13.github.io/
+- https://soat1-grp13.github.io/Hackathon/Documentos/RIPD/index.html
 
 # Relatório OWASP Zap
 
 O relatório pode ser acessado através do link:
-- https://soat1-grp13.github.io/
+- https://soat1-grp13.github.io/Hackathon/Documentos/OWASP_ZAP/index.html
 
 # ✔️ Tecnologias utilizadas
 
