@@ -44,7 +44,7 @@ O Swagger já contém exemplos de chamadas com dados reais.
 
 Se estiver testando via Swagger, lembre-se de adicionar o token obtido na resposta da chamada no menu "Authorize".
 Autenticação:
-As chamadas que requerem autenticação são detalhadas na documentação. Para obter um token Bearer, você pode através do seguinte projeto: [https://github.com/SOAT1-GRP13/TechChallenge-SOAT1-GRP13-Auth](https://github.com/SOAT1-GRP13/Hackathon-Auth).
+As chamadas que requerem autenticação são detalhadas na documentação. Para obter um token Bearer, você pode através do seguinte projeto: [https://github.com/SOAT1-GRP13/Hackathon-Auth](https://github.com/SOAT1-GRP13/Hackathon-Auth).
 
 **Postman**
 
@@ -141,13 +141,31 @@ A integração do SonarQube com nossas pipelines de CI/CD (Integração Contínu
 **Feedback Instantâneo**: Desenvolvedores recebem feedback imediato sobre a qualidade do código, permitindo correções rápidas e iterativas.
 **Visibilidade da Qualidade do Código**: Dashboards e relatórios gerados pelo SonarQube oferecem uma visão clara da saúde do código e das áreas que necessitam de atenção, promovendo uma cultura de qualidade entre a equipe.
 
-**Link dos nosso microserviços no Sonar**
+**Link dos nossos microserviços no Sonar**
 
 - **Auth**: https://sonarcloud.io/summary/overall?id=SOAT1-GRP13_Hackathon-Auth
 - **Ponto**: https://sonarcloud.io/summary/overall?id=SOAT1-GRP13_Hackathon-Ponto
 - **Relatório**: https://sonarcloud.io/summary/overall?id=SOAT1-GRP13_Hackathon-Relatorio
 
-# Esteira de publicação
+# Esteira de publicação (CI/CD)
+
+Nossos projetos adotam o GitHub Actions para automatizar a esteira de CI/CD, dividida em duas etapas principais, garantindo uma entrega contínua e eficiente:
+
+**1. Criação e Armazenamento de Imagens Docker**
+- **Criação de Imagem**: Utilizamos o Dockerfile na raiz de cada projeto para construir imagens Docker, encapsulando o microserviço.
+- **Armazenamento**: As imagens são automaticamente enviadas para o Docker Hub, proporcionando uma gestão centralizada e facilitando o acesso e a distribuição.
+
+**2. Publicação na AWS**
+- **Deploy**: Na sequência, o GitHub Actions é configurado para implantar a imagem Docker mais recente na nossa infraestrutura AWS, utilizando serviços como ECS (Elastic Container Service) ou EKS (Elastic Kubernetes Service), dependendo da necessidade do projeto.
+- **Automação**: Todo o processo é automatizado, desde a integração do código até o deploy, assegurando que as novas versões sejam lançadas rapidamente e com estabilidade.
+
+Esta estratégia de CI/CD nos permite manter um ritmo constante de inovação e melhorias, reduzindo significativamente o tempo de colocação no mercado de novas funcionalidades e correções.
+
+**Link das imagens dos nossos microserviços no DockerHub**
+
+- **Auth**: https://hub.docker.com/repository/docker/christiandmelo/hackathon-soat1-grp13-auth/general
+- **Ponto**: https://hub.docker.com/repository/docker/christiandmelo/hackathon-soat1-grp13-ponto/general
+- **Relatório**: https://hub.docker.com/repository/docker/christiandmelo/hackathon-soat1-grp13-relatorio/general
 
 # RabbitMQ
 
