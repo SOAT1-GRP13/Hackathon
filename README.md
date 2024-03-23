@@ -196,9 +196,8 @@ A escolha do Terraform para gerir nossa infraestrutura na AWS reflete nosso comp
 Através do Terraform, asseguramos uma abordagem consistente e reproduzível para a gestão da infraestrutura, essencial para suportar a operação contínua e o crescimento do nosso sistema de ponto eletrônico em nuvem.
 
 **Desenho da nossa infraestrutura na AWS**
-
-TODO -> Colocar o desenho da nossa infraestrutura
-![infra_AWS](</Documentos/Imagens//.png>)
+ 
+![infra_AWS](</Documentos/Imagens//Infra.png>)
 
 # Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
 
