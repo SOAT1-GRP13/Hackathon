@@ -17,7 +17,7 @@ License: [MIT](License.txt)
 
 No vídeo abaixo, explicamos com mais detalhes o projeto:
 
-![Video_explicativo](https://youtu.be/xGKNmpJqEQI)
+Video explicativo: https://youtu.be/xGKNmpJqEQI
 
 # 🛠️ Abrir e rodar o projeto utilizando o docker
 
